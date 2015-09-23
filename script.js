@@ -14,18 +14,26 @@
 //   });
 // });
 
+// SC.initialize({
+//   client_id: '47159083054685525f6b73d25e2560b9',
+//   redirect_uri: 'http://31.200.238.29/SoundCloud/'
+// });
+
+// $(document).ready(function() {
+//   $('a.connect').click(function(e) {
+//     e.preventDefault();
+//     SC.connect(function() {
+//       SC.get('/me', function(me) {
+//         $('#username').html(me.username);
+//       });
+//     });
+//   });
+// });
+
 SC.initialize({
-  client_id: '47159083054685525f6b73d25e2560b9',
-  redirect_uri: 'http://31.200.238.29/SoundCloud/'
+  client_id: '47159083054685525f6b73d25e2560b9'
 });
 
 $(document).ready(function() {
-  $('a.connect').click(function(e) {
-    e.preventDefault();
-    SC.connect(function() {
-      SC.get('/me', function(me) {
-        $('#username').html(me.username);
-      });
-    });
-  });
+
 });
