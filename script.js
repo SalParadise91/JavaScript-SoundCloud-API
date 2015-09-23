@@ -38,12 +38,22 @@
 
 // });
 
+// SC.initialize({
+//     client_id: '47159083054685525f6b73d25e2560b9'
+// });
+
+// $(document).ready(function() {
+//     SC.get('/tracks/293',function(track){ 
+//         $('#player').html(track.title);
+//     });
+// });
+
 SC.initialize({
-    client_id: '47159083054685525f6b73d25e2560b9'
+  client_id: '47159083054685525f6b73d25e2560b9'
 });
 
 $(document).ready(function() {
-    SC.get('/tracks/293',function(track){ 
-        $('#player').html(track.title);
-    });
+     SC.get('/tracks/293', function(track) {
+       SC.oEmbed(track.permalink_url, document.getElementById('player'));
+     });
 });
