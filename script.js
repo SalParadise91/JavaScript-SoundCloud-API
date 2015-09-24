@@ -58,19 +58,35 @@
 //      });
 // });
 
+// SC.initialize({
+// 	client_id: '47159083054685525f6b73d25e2560b9'
+// });
+
+// $(document).ready(function() {
+// 	SC.stream('/tracks/293', function(sound) {
+// 		$('#start').click(function(e) {
+// 			e.preventDefault();
+// 			sound.start();
+// 		});
+// 		$('#stop').click(function(e) {
+// 			e.preventDefault();
+// 			sound.stop();
+// 		});
+// 	});
+// });
+
 SC.initialize({
-	client_id: '47159083054685525f6b73d25e2560b9'
+	client_id: '47159083054685525f6b73d25e2560b9',
+	redirect_uri: 'http://31.200.238.29/SoundCloud/'
 });
 
 $(document).ready(function() {
-	SC.stream('/tracks/293', function(sound) {
-		$('#start').click(function(e) {
-			e.preventDefault();
-			sound.start();
-		});
-		$('#stop').click(function(e) {
-			e.preventDefault();
-			sound.stop();
-		});
-	});
+
 });
+
+// Helper methods for our UI.
+
+function updateTimer(ms) {
+	// update the timer text. Used when we're recording
+	$('.status').text(SC.Helper.millisecondsToHMS(ms));
+}
