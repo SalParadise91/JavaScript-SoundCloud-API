@@ -109,6 +109,23 @@ $(document).ready(function() {
 			}
 		});
 	});
+
+	$('#upload').click(function(e) {
+	e.preventDefault();
+	SC.connect({
+		connected: function() {
+			$('.status').html('Uploading...');
+			SC.recordUpload({
+				track: {
+					title: 'My Recording',
+					sharing: 'public'
+				}
+			}, function(track) {
+				$('.status').html("Uploaded: <a href='" + track.permalink_url + "'>" + track.permalink_url + "</a>");
+			});
+		}
+	});
+});
 });
 
 // Helper methods for our UI.
