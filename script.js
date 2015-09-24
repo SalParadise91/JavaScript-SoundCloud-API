@@ -99,6 +99,16 @@ $(document).ready(function() {
 		$('#upload').show();
 		SC.recordStop();
 	});
+
+	$('#playBack a').click(function(e) {
+		e.preventDefault();
+		updateTimer(0);
+		SC.recordPlay({
+			progress: function(ms) {
+				updateTimer(ms);
+			}
+		});
+	});
 });
 
 // Helper methods for our UI.
